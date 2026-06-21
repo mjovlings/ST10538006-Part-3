@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CampusCash Helpdesk & Office Locations</title>
+    <meta name="description" content="Get in touch with the CampusCash team. Submit an enquiry form or visit our interactive campus office layout map.">
+    <meta name="keywords" content="contact CampusCash, Rosebank College support, cashless app help, banking helpdesk">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/logo.png" alt="CampusCash Official Brand Logo Graphic">
+            <div class="header-text">
+                <h2>CampusCash</h2>
+                <p>Financial solutions for students.</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="FAQs.html">FAQs</a></li>
+                <li><a href="Testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact & Support</h1>
+        
+        <div class="contact-info interactive">
+            <p>Call/WhatsApp: 063 749 9120</p>
+            <p>Email: admin@campuscash.co.za</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="forms-wrapper">
+                <!-- FORM 1: ENQUIRY FORM (Account specific) -->
+                <div class="form-container">
+                    <h2>Student Account Enquiry</h2>
+                    <form id="enquiryForm" novalidate>
+                        <div class="form-group">
+                            <label for="enq-name">Full Name:</label>
+                            <input type="text" id="enq-name" name="enq-name" required>
+                            <span id="enq-name-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="enq-student">Student Number:</label>
+                            <input type="text" id="enq-student" name="enq-student" required>
+                            <span id="enq-student-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="enq-category">Enquiry Type:</label>
+                            <select id="enq-category" name="enq-category" required>
+                                <option value="">Select an option</option>
+                                <option value="balance">Balance Query</option>
+                                <option value="lost_card">Lost Card / Block Account</option>
+                                <option value="dispute">Transaction Dispute</option>
+                            </select>
+                            <span id="enq-category-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="enq-message">Enquiry Details:</label>
+                            <textarea id="enq-message" name="enq-message" rows="3" required></textarea>
+                            <span id="enq-message-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="enq-confirm" name="enq-confirm" required>
+                            <label for="enq-confirm">I confirm the above details belong to my student account.</label>
+                            <span id="enq-confirm-error" class="error-msg"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">Process Enquiry Response</button>
+                        <div id="enq-success-feedback" class="success-box-hidden"></div>
+                    </form>
+                </div>
+
+                <!-- FORM 2: GENERAL CONTACT FORM (Email reach out) -->
+                <div class="form-container" style="margin-top: 3rem;">
+                    <h2>General Email Contact</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contact-name">Full Name:</label>
+                            <input type="text" id="contact-name" name="contact-name" required>
+                            <span id="contact-name-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address:</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                            <span id="contact-email-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message:</label>
+                            <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+                            <span id="contact-message-error" class="error-msg"></span>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="contact-policy" name="contact-policy" required>
+                            <label for="contact-policy">I agree to the privacy policy regarding email communications.</label>
+                            <span id="contact-policy-error" class="error-msg"></span>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Email to Admin</button>
+                        <div id="contact-success-feedback" class="success-box-hidden"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <h2>Find Us on Campus</h2>
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Call: 063 749 9120</p>
+        <p>Email: admin@campuscash.co.za</p>
+        <p>&copy; 2026 CampusCash. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
